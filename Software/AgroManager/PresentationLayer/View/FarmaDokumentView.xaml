@@ -1,0 +1,60 @@
+﻿<Window
+    x:Class="PresentationLayer.View.FarmaDokumentView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:UserControls="clr-namespace:PresentationLayer.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PresentationLayer.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpfAnimatedGif="http://wpfanimatedgif.codeplex.com"
+    Width="350"
+    Height="400"
+    AllowsTransparency="True"
+    Background="Transparent"
+    Loaded="Window_Loaded"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Border Background="White" CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <Label
+                Grid.Row="0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Content="Farma"
+                FontSize="25"
+                Style="{StaticResource lblCardContent}" />
+            <Image Grid.Row="1"
+            x:Name="GifLoading"
+                Width="Auto"
+                Height="30"
+                Margin="0,15,0,0"
+                VerticalAlignment="Top"
+                wpfAnimatedGif:ImageBehavior.AnimatedSource="/Images/gifLoading2.gif"
+                Visibility="Hidden" />
+
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden">
+                <StackPanel x:Name="StackPanelVrsteStokeNaFarmi" />
+            </ScrollViewer>
+
+            <StackPanel
+                Grid.Row="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="BtnIzadji"
+                    Click="BtnIzadji_Click"
+                    Content="Izađi"
+                    Style="{StaticResource BtnViewActionStyle}" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

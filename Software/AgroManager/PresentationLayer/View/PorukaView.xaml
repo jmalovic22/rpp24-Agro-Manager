@@ -1,0 +1,61 @@
+﻿<Window
+    x:Class="PresentationLayer.View.PorukaView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:UserControl="clr-namespace:PresentationLayer.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PresentationLayer.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="AddPosaoView"
+    Width="Auto"
+    Height="Auto"
+    AllowsTransparency="True"
+    Background="Transparent"
+    ResizeMode="NoResize"
+    WindowStartupLocation="Manual"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Grid RenderTransformOrigin="0,1">
+        <Border Background="White" CornerRadius="10">
+            <Label
+                Grid.Row="0"
+                Padding="25"
+                FontSize="16"
+                Style="{StaticResource lblCardContent}">
+                <TextBlock
+                    x:Name="TxtPoruka"
+                    Height="Auto"
+                    MaxWidth="300"
+                    HorizontalAlignment="Stretch"
+                    Text="Poruka"
+                    TextAlignment="Center"
+                    TextOptions.TextFormattingMode="Display"
+                    TextWrapping="Wrap" />
+            </Label>
+        </Border>
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                <BeginStoryboard x:Name="StoryboardLoad">
+                    <Storyboard>
+                        <DoubleAnimation
+                            Storyboard.TargetProperty="(UIElement.Opacity)"
+                            From="0.0"
+                            To="1.0"
+                            Duration="0:0:1" />
+                        <DoubleAnimation
+                            BeginTime="0:0:2"
+                            Completed="DoubleAnimationCompleted"
+                            Storyboard.TargetProperty="(UIElement.Opacity)"
+                            From="1.0"
+                            To="0.0"
+                            Duration="0:0:1" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Grid.Triggers>
+
+        <Grid.RenderTransform>
+            <ScaleTransform ScaleY="1" />
+        </Grid.RenderTransform>
+    </Grid>
+</Window>

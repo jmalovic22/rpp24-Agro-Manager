@@ -1,0 +1,52 @@
+﻿<Window
+    x:Class="PresentationLayer.View.NapomenaView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:UserControl="clr-namespace:PresentationLayer.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PresentationLayer.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="AddIzdatnicaView"
+    Width="400"
+    Height="500"
+    AllowsTransparency="True"
+    Background="Transparent"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Border Background="White" CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="7*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Label x:Name="LabelNazivDokumenta" Style="{StaticResource lblCardContent}" />
+            <StackPanel Grid.Row="1">
+                <Label
+                    x:Name="ProstorZaPodnaslov"
+                    Grid.Row="1"
+                    Margin="20,20,20,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Content="Napomena/Biljeska:"
+                    Style="{StaticResource lblCardContent}" />
+                <TextBlock
+                    x:Name="TxtNapomene"
+                    Grid.Row="1"
+                    Margin="20,10,20,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    TextWrapping="Wrap" />
+            </StackPanel>
+            <Button
+                x:Name="BtnIzadi"
+                Grid.Row="2"
+                HorizontalAlignment="Center"
+                Click="BtnIzadi_Click"
+                Content="Izađi"
+                Style="{StaticResource btnLoginStyle}" />
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,126 @@
+﻿<Window
+    x:Class="PresentationLayer.View.EditFarmaView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:UserControls="clr-namespace:PresentationLayer.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PresentationLayer.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpfAnimatedGif="http://wpfanimatedgif.codeplex.com"
+    Title="EditFarmaView"
+    Width="450"
+    Height="550"
+    AllowsTransparency="True"
+    Background="Transparent"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d" Loaded="Window_Loaded_1">
+    <Border Background="White" CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="20*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <Label
+                Margin="0,8,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Content="Uređivanje farme"
+                FontSize="25"
+                Style="{StaticResource lblCardContent}" />
+            <UserControls:UcSearchBar
+                x:Name="TxtPovrsinaInput"
+                Width="140"
+                Height="30"
+                Margin="0,55,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Placeholder="Povrsina" />
+            <UserControls:UcSearchBar
+                x:Name="TxtBrojZaposlenihInput"
+                Width="140"
+                Height="30"
+                Margin="0,100,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Placeholder="Broj zaposlenih" />
+            <UserControls:UcSearchBar
+                x:Name="TxtLokacijaInput"
+                Width="140"
+                Height="30"
+                Margin="0,151,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Placeholder="Lokacija" />
+            <Grid Grid.Row="1">
+                <Label
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Content="Status farme:"
+                    Style="{StaticResource lblCardContent}" />
+                <RadioButton
+                    x:Name="RbAktivna"
+                    Margin="0,26,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Content="Aktivna" />
+                <RadioButton
+                    x:Name="RbNeaktivna"
+                    Margin="0,45,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Content="Neaktivna" />
+            </Grid>
+
+            <Button
+                x:Name="btnDodajStokuFarma"
+                Grid.Row="2"
+                Width="174"
+                Height="30"
+                Margin="0,2,0,0"
+                Padding="5"
+                HorizontalAlignment="Center"
+                Click="btnDodajStokuFarma_Click"
+                Content="Dodaj vrstu stoke"
+                Style="{StaticResource btnLoginStyle}" />
+
+            <Image
+                x:Name="GifLoading"
+                Grid.Row="3"
+                Width="Auto"
+                Height="30"
+                Margin="0,15,0,0"
+                VerticalAlignment="Top"
+                wpfAnimatedGif:ImageBehavior.AnimatedSource="/Images/gifLoading2.gif"
+                Visibility="Hidden" />
+            
+            <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Hidden">
+                <StackPanel x:Name="StackPanelVrsteStokeNaFarmi" />
+            </ScrollViewer>
+
+            <StackPanel
+                Grid.Row="4"
+                Width="250"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="BtnSpremi"
+                    Margin="0,0,50,0"
+                    Click="BtnSpremi_Click"
+                    Content="Spremi"
+                    Style="{StaticResource BtnViewActionStyle}" />
+                <Button
+                    x:Name="BtnOdustani"
+                    Background="#902626"
+                    Click="BtnOdustani_Click"
+                    Content="Odustani"
+                    Style="{StaticResource BtnViewActionStyle}" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
