@@ -1,0 +1,61 @@
+﻿<UserControl
+    x:Class="PresentationLayer.UserControls.UcVozilo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PresentationLayer.UserControls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpfAnimatedGif="http://wpfanimatedgif.codeplex.com"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Loaded="UserControl_Loaded"
+    mc:Ignorable="d">
+
+    <Grid Background="#e8e8e8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="8.5*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Style="{StaticResource lblNaslovEntitetaStyle}" Text="VOZILA" />
+
+            <local:UcAddButton
+                x:Name="BtnDodaj"
+                ButtonClick="BtnDodaj_ButtonClick"
+                Style="{StaticResource BtnDodajStyle}" />
+
+            <local:UcSearchBar Placeholder="unesi ID vozila" Style="{StaticResource PretraziTextBoxStyle}" />
+
+            <Image
+                x:Name="GifLoading"
+                Width="Auto"
+                Height="30"
+                Margin="20,15,0,0"
+                VerticalAlignment="Top"
+                wpfAnimatedGif:ImageBehavior.AnimatedSource="/Images/gifLoading2.gif"
+                Visibility="Hidden" />
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden">
+            <ItemsControl x:Name="ItemKontrola" ItemsSource="{Binding ListaVozila}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:UcVoziloCard
+                            x:Name="UcVoziloKartica"
+                            Margin="0,0,10,20"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            DataContext="{Binding}" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>

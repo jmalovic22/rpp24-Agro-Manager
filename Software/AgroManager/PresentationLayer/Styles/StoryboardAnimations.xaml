@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Storyboard x:Key="btnNavBackgroundAnimation">
+        <DoubleAnimation
+            Storyboard.TargetProperty="Width"
+            From="0"
+            To="280"
+            Duration="0:0:0.2" />
+    </Storyboard>
+
+    <Storyboard x:Key="MouseOverAnimation">
+        <ThicknessAnimation
+            Storyboard.TargetProperty="Padding"
+            To="3"
+            Duration="0:0:0.1" />
+        <ThicknessAnimation
+            Storyboard.TargetProperty="BorderThickness"
+            To="2"
+            Duration="0:0:0.1" />
+        <ColorAnimation
+            Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+            To="#b0d6b0"
+            Duration="0:0:0.1" />
+    </Storyboard>
+
+    <Storyboard x:Key="MouseLeaveAnimation">
+        <ThicknessAnimation
+            Storyboard.TargetProperty="Padding"
+            To="0"
+            Duration="0:0:0.1" />
+        <ThicknessAnimation
+            Storyboard.TargetProperty="BorderThickness"
+            To="0"
+            Duration="0:0:0.1" />
+        <ColorAnimation
+            Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+            To="Transparent"
+            Duration="0:0:0.1" />
+    </Storyboard>
+
+</ResourceDictionary>
