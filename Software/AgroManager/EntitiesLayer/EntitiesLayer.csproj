@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{16836AFB-7251-4490-BE80-E50F6F98157E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EntitiesLayer</RootNamespace>
+    <AssemblyName>EntitiesLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enkodiranje\Enkodiranje.cs" />
+    <Compile Include="Entiteti\Evidencija_stoke_farma.cs" />
+    <Compile Include="Entiteti\Farma.cs" />
+    <Compile Include="Entiteti\Izdatnica.cs" />
+    <Compile Include="Entiteti\Korisnik.cs" />
+    <Compile Include="Entiteti\Poduzece.cs" />
+    <Compile Include="Entiteti\Polje.cs" />
+    <Compile Include="Entiteti\Posao.cs" />
+    <Compile Include="Entiteti\Predatnica.cs" />
+    <Compile Include="Entiteti\Prikljucak.code.cs" />
+    <Compile Include="Entiteti\Prikljucak.cs" />
+    <Compile Include="Entiteti\Radni_nalog.cs" />
+    <Compile Include="Entiteti\Silos.cs" />
+    <Compile Include="Entiteti\Stavka_radnog_naloga.cs" />
+    <Compile Include="Entiteti\Tip_korisnika.cs" />
+    <Compile Include="Entiteti\Uzgojna_kultura.cs" />
+    <Compile Include="Entiteti\Vozilo.cs" />
+    <Compile Include="Entiteti\Vrsta_prikljucka.cs" />
+    <Compile Include="Entiteti\Vrsta_stoke.cs" />
+    <Compile Include="Entiteti\Vrsta_stoke_farma.cs" />
+    <Compile Include="Enumeracije\EnumPolozeneKategorije.cs" />
+    <Compile Include="Enumeracije\EnumPozicija.cs" />
+    <Compile Include="Enumeracije\EnumVrstaVozila.cs" />
+    <Compile Include="Models\Greska.cs" />
+    <Compile Include="Models\KorisnikPrijava.cs" />
+    <Compile Include="Models\ResursiPoduzeca.cs" />
+    <Compile Include="Models\SilosModel.cs" />
+    <Compile Include="Models\UnutarnjaGreska.cs" />
+    <Compile Include="Models\VrstaVozila.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\TOTP.cs" />
+    <Compile Include="Utilities\Zajednicko.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
